@@ -1,0 +1,9 @@
+For my website, I found a host with Joomla, and installed the template in the Used Template folder in Joomla.
+
+I also installed all the modules in the Joomla Modules folder. They are general use modules not written by me.
+
+
+The images are put into constructo main edit page's image slider section. Image sources included.
+
+
+Follow the instructions in the Script section.

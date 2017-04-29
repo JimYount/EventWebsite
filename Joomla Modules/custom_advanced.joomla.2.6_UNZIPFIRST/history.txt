@@ -1,0 +1,22 @@
+------------------------------------------------------------------------
+Custom HTML Advandec module version history
+------------------------------------------------------------------------
+
+
+1.0:
+# Initial release
+
+2.0:
++ Joomla 1.6-2.5 support
+
+2.1:
++ PHP Code evaulation
+
+2.2:
+# Fix for PHP 5.4 compatibility
+
+2.4:
++ Added possibility to render only if particular HTTP parameter or cookie is present
+
+2.6:
++ Config option to remove start/end html comments from output

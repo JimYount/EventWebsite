@@ -1,0 +1,8 @@
+A.nivo-imageLink {
+	background: transparent url(img/x.gif) repeat top left;
+}
+
+.nivo-controlNav {
+	*display: inline;
+	zoom: 1;
+}

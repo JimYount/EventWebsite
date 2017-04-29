@@ -1,0 +1,23 @@
+To change the address to thebarker.net with nothing else:
+
+In Joomla htaccess:
+
+RewriteEngine on
+
+RewriteCond %{THE_REQUEST} home2/thebark1/
+RewriteRule ^home2/thebark1/(.*) http://thebarker.net/$1 [R=301,L]
+RewriteCond %{REQUEST_URI} !home2/thebark1/
+RewriteRule ^(.*)$ /home2/thebark1/$1 [L]
+
+
+In base htaccess:
+
+RewriteBase /home2/thebark1/
+
+
+In public_html/home2/thebark1/configuration.php:
+
+public $live_site = 'http://thebarker.net';
+
+- Do the same with log and temp
+	- Necessary?

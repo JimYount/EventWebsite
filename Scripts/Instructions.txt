@@ -1,0 +1,117 @@
+Asheville_Events.sql is a phpMyAdmin SQL Dump that I have edited to reflect the current database.
+
+
+Follow this guide to use the Custom html module in joomla to put php code into an article:
+https://www.youtube.com/watch?v=4ltuKn729ok
+Text:
+1. Copy the html advanced module in Joomla's Module Manager and edit it.
+2. Paste the code from ShowDatabase.php into the php section. 
+3. Set the position to a name you choose by typing in the position section. Enable the module. 
+4. Link an article to the module using a Joomla custom position:
+{loadposition yourCustomPositionName}
+
+
+Follow this guide if you want to execute Scraper.rb:
+
+You need ruby environment 2.1+ installed on your machine. The newer the better. Also install the matching ruby development kit and railsinstaller.
+
+I used ruby 2.3.3p222 (2016-11-21 revision 56859) [x64-mingw32] from the ruby for windows installer, as well as the matching development kit: https://rubyinstaller.org/downloads/
+
+My rails installer was Windows Ruby 2.3 from:
+http://railsinstaller.org/en
+
+
+I was using these gems, and cannot guarantee proper functioning until these install. This may be the hardest part of the configuration. It was for me. Some gems came broken and needed debugging when you attempt to use them by executing a script. Just follow the compile errors to the files in question, most of the time they are just missing another gem. I do not remember all I did for this part:
+
+mysql is still broken for me (though technically installed). I used mysql2 instead. mysql can be skipped, but its requirements may be needed.
+
+activemodel (5.0.2)
+activerecord (5.0.2)
+activerecord-mysql-adapter (0.0.1)
+activerecord-mysql2-adapter (0.0.3)
+activesupport (5.0.2)
+arel (7.1.4)
+array (1.0.0)
+array-compositing (1.0.8)
+array-hooked (1.1.4)
+array-sorted (1.1.2)
+array-sorted-compositing (1.0.5)
+array-sorted-unique (1.1.1)
+array-sorted-unique-compositing (1.0.3)
+array-unique (1.1.1)
+array-unique-compositing (1.0.6)
+arrays (0.0.2)
+bigdecimal (1.2.8)
+bundle (0.0.1)
+bundler (1.14.6)
+certified (1.0.0)
+colored (1.2)
+concurrent-ruby (1.0.5)
+development (1.1.3)
+did_you_mean (1.0.0)
+diff-lcs (1.3)
+facets (3.1.0)
+git (1.3.0)
+hoe (3.16.0)
+httpclient (2.8.3)
+i18n (0.8.1)
+identifies_as (1.1.1)
+io-console (0.4.5)
+json (2.1.0, 1.8.3)
+mini_portile2 (2.1.0)
+minitest (5.8.5)
+module-cluster (2.0.5)
+monitor (0.1.3)
+mysql (2.9.1)
+mysql2 (0.4.5 x64-mingw32)
+net-telnet (0.1.1)
+nokogiri (1.7.1 x64-mingw32)
+open_uri_redirections (0.2.1)
+path (2.0.1)
+power_assert (0.2.6)
+psych (2.1.0)
+quality_extensions (1.4.0)
+rack (1.6.5)
+rack-protection (1.5.3)
+rake (10.4.2)
+rake-compiler (1.0.3)
+rdoc (4.2.1)
+rspec (3.5.0)
+rspec-core (3.5.4)
+rspec-expectations (3.5.0)
+rspec-mocks (3.5.0)
+rspec-support (3.5.0)
+sinatra (1.4.8)
+sinatra-base (1.4.0)
+test-unit (3.1.5)
+thread_safe (0.3.6)
+tilt (2.0.7, 1.4.1)
+tzinfo (1.2.3)
+unroller (1.0.0)
+
+You can install each with: gem install gemname
+I did not include the version in these installs, but you can force a version with if one is not compatable for any reason:
+gem install gemname -v versionNumber
+
+NOTE: it will let you install multiple verisons of gems. This can cause problems.
+
+
+You need to install updated certificates for ruby's open_uri or https will break:
+
+1. Place cacert.pem into c:\railsinstaller\
+2. Go to your Computer -> Advanced Settings -> Environment Variables
+3. Create a new System Variable:
+Variable: SSL_CERT_FILE Value: C:\RailsInstaller\cacert.pem
+4.Close all your command prompts, including your Rails server command prompt, etc.
+
+NOTE: The certificates installation might be circumvented by installing the 'certified' gem in my gem list above.
+
+Try this guide if you are still stuck with a certificate rejection:
+http://guides.rubygems.org/ssl-certificate-update/
+
+
+
+You also need to fill your own database details into the Scraper.rb and ShowDatabase.php files. I was using notepad++ to edit these.
+
+
+That is about as much as I remember from the debugging. Sorry if I forgot anything. Google, stackexchange, the ruby gems website: https://rubygems.org/, and included documentation helped with this.

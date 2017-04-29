@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0.0" type="module" method="upgrade" client="site">
+	<name>ARI Image Slider</name>
+	<author>ARI Soft</author>
+	<creationDate>December 2016</creationDate>
+	<copyright>ARI Soft</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>info@ari-soft.com</authorEmail>
+	<authorUrl>www.ari-soft.com</authorUrl>
+	<version>2.2.2</version>
+	<description>ARI_IMAGE_SLIDER_MODULE</description>
+    <scriptfile>script.php</scriptfile>
+    <updateservers>
+        <server type="extension" priority="1" name="ARI Image Slider Update Site">http://www.ari-soft.com/updates/ariimageslider/ariimageslider.xml</server>
+    </updateservers>
+	<files>
+		<filename module="mod_ariimageslider">mod_ariimageslider.php</filename>
+		<filename>index.html</filename>
+		<filename>ariimageslider.ini</filename>
+		<folder>mod_ariimageslider</folder>
+		<folder>tmpl</folder>
+	</files>
+	<languages>
+        <language tag="en-GB">language/en-GB/en-GB.mod_ariimageslider.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.mod_ariimageslider.sys.ini</language>
+        <language tag="fa-IR">language/fa-IR/fa-IR.mod_ariimageslider.ini</language>
+        <language tag="fa-IR">language/fa-IR/fa-IR.mod_ariimageslider.sys.ini</language>
+        <language tag="pt-BR">language/pt-BR/pt-BR.mod_ariimageslider.ini</language>
+        <language tag="pt-BR">language/pt-BR/pt-BR.mod_ariimageslider.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/modules/mod_ariimageslider/mod_ariimageslider/fields">
+		  		<field name="width" type="text" class="input-small" size="5" default="300" label="AIM_WIDTH_LABEL" description="AIM_WIDTH_DESCR" />
+		  		<field name="height" type="text" class="input-small" size="5" default="220" label="AIM_HEIGHT_LABEL" description="AIM_HEIGHT_DESCR" />
+		  		<field name="responsive" type="radio" class="btn-group" default="1" label="AIM_RESPONSIVE_LABEL" description="AIM_RESPONSIVE_DESCR">
+  					<option value="0">AIM_NO</option> 
+  					<option value="1">AIM_YES</option> 
+  				</field>
+		  		<field name="theme" type="folderlist" default="default" exclude="img" directory="modules/mod_ariimageslider/mod_ariimageslider/js/themes" hide_none="1" label="AIM_THEME_LABEL" description="AIM_THEME_DESCR" />
+                <field name="sourceHeader" type="ariheader" default="AIM_LOADIMAGESFROM" label="" description="" />
+                <field name="path" type="textarea" class="input-xlarge" rows="10" cols="50" label="AIM_PATH_LABEL" description="AIM_PATH_DESCR" />
+                <field name="subdirLevel" type="text" class="input-small" size="5" default="0" label="AIM_SUBDIRLEVEL_LABEL" description="AIM_SUBDIRLEVEL_DESCR" />
+                <field name="subdir" type="list" default="0" label="AIM_SUBDIR_LABEL" description="AIM_SUBDIR_DESCR">
+                    <option value="0">AIM_NO</option>
+                    <option value="1">AIM_YES</option>
+                </field>
+                <field name="imgNumber" type="text" class="input-small" default="0" label="AIM_IMGNUM_LABEL" description="AIM_IMGNUM_DESCR" />
+                <field name="sortBy" type="list" default="" label="AIM_SORTBY_LABEL" description="AIM_SORTBY_DESCR">
+                    <option value="">AIM_NONE</option>
+                    <option value="filename">AIM_FILENAME</option>
+                    <option value="modified">AIM_MODIFIED</option>
+                    <option value="random">AIM_RANDOM</option>
+                </field>
+                <field name="sortDir" type="radio" class="btn-group" default="asc" label="AIM_SORTDIR_LABEL" description="AIM_SORTDIR_DESCR">
+                    <option value="asc">AIM_ASC</option>
+                    <option value="desc">AIM_DESC</option>
+                </field>
+                <field name="lpHeader" type="ariheader" default="AIM_LIGHTBOX_PARAMS" label="" description="" />
+		  		<field name="lightboxEngine" type="list" default="" label="AIM_LIGHTBOXENGINE_LABEL" description="AIM_LIGHTBOXENGINE_DESCR">
+		  			<option value="">AIM_NONE</option>
+		  			<option value="arisexylightbox">AIM_ARISEXYLIGHTBOX</option>
+		  			<option value="aricolorbox">AIM_ARICOLORBOX</option>
+		  			<option value="arifancybox">AIM_ARIFANCYBOX</option>
+		  			<option value="ariprettyphoto">AIM_ARIPRETTYPHOTO</option>
+		  			<option value="corejoomlalightbox">AIM_COREJOOMLALIGHTBOX</option>
+		  		</field>
+		  		<field name="lightbox_width" type="text" class="input-small" size="5" default="450" label="AIM_LBWIDTH_LABEL" description="AIM_LBWIDTH_DESCR" />
+		  		<field name="lightbox_height" type="text" class="input-small" size="5" default="300" label="AIM_LBHEIGHT_LABEL" description="AIM_LBHEIGHT_DESCR" />
+		  		<field name="lightbox_grouping" type="radio" class="btn-group" default="1" label="AIM_LBGROUPING_LABEL" description="AIM_LBGROUPING_DESCR">
+		  			<option value="0">AIM_NO</option> 
+		  			<option value="1">AIM_YES</option> 
+		  		</field>
+		  		<field name="lightbox_bgColor" type="color" size="10" default="" label="AIM_BGCOLOR_LABEL" description="AIM_BGCOLOR_DESCR" />
+				<field name="spHeader" type="ariheader" default="AIM_SLIDER_PARAMS" label="" description="" />
+                <field name="opt_manualAdvance" type="radio" class="btn-group" default="0" label="AIM_MANUALADVANCE_LABEL" description="AIM_MANUALADVANCE_DESCR">
+                    <option value="0">AIM_NO</option>
+                    <option value="1">AIM_YES</option>
+                </field>
+                <field name="fixTransparentBg" type="radio" class="btn-group" default="0" label="AIM_FIXTRANSPARENTBG_LABEL" description="AIM_FIXTRANSPARENTBG_DESCR">
+		  			<option value="0">AIM_NO</option> 
+		  			<option value="1">AIM_YES</option> 
+		  		</field>
+				<field name="opt_disableClick" type="radio" class="btn-group" default="0" label="AIM_BLOCKCLICK_LABEL" description="AIM_BLOCKCLICK_DESCR">
+		  			<option value="0">AIM_NO</option> 
+		  			<option value="1">AIM_YES</option> 
+		  		</field>
+				<field name="opt_effect" type="list" default="random" label="AIM_EFFECT_LABEL" description="AIM_EFFECT_DESCR">
+					<option value="random">AIM_EFFECT_RANDOM</option>
+					<option value="sliceDown">AIM_EFFECT_SLICEDOWN</option>
+					<option value="sliceDownLeft">AIM_EFFECT_SLICEDOWNLEFT</option>
+					<option value="sliceUp">AIM_EFFECT_SLICEUP</option>
+					<option value="sliceUpLeft">AIM_EFFECT_SLICEUPLEFT</option>
+					<option value="sliceUpDown">AIM_EFFECT_SLICEUPDOWN</option>
+					<option value="sliceUpDownLeft">AIM_EFFECT_SLICEUPDOWNLEFT</option>
+					<option value="slideInLeft">AIM_EFFECT_SLIDEINLEFT</option>
+					<option value="slideInRight">AIM_EFFECT_SLIDEINRIGHT</option>
+					<option value="fold">AIM_EFFECT_FOLD</option>
+					<option value="fade">AIM_EFFECT_FADE</option>
+					<option value="boxRandom">AIM_EFFECT_BOXRANDOM</option>
+					<option value="boxRain">AIM_EFFECT_BOXRAIN</option>
+					<option value="boxRainReverse">AIM_EFFECT_BOXRAINREV</option>
+					<option value="boxRainGrow">AIM_EFFECT_BOXRAINGROW</option>
+					<option value="boxRainGrowReverse">AIM_EFFECT_BOXGROWREV</option>
+				</field>
+				<field name="opt_slices" type="text" class="input-small" size="5" default="15" label="AIM_SLICES_LABEL" description="AIM_SLICES_DESCR" />
+				<field name="opt_boxCols" type="text" class="input-small" size="5" default="8" label="AIM_BOXCOLS_LABEL" description="AIM_BOXCOLS_DESCR" />
+				<field name="opt_boxRows" type="text" class="input-small" size="5" default="4" label="AIM_BOXROWS_LABEL" description="AIM_BOXROWS_DESCR" />
+				<field name="opt_animSpeed" type="text" class="input-small" size="5" default="500" label="AIM_ANIMSPEED_LABEL" description="AIM_ANIMSPEED_DESCR" />
+				<field name="opt_pauseTime" type="text" class="input-small" size="5" default="3000" label="AIM_PAUSETIME_LABEL" description="AIM_PAUSETIME_DESCR" />
+				<field name="opt_startSlide" type="text" class="input-small" size="5" default="0" label="AIM_STARTSLIDE_LABEL" description="AIM_STARTSLIDE_DESCR" />
+				<field name="opt_randomStart" type="radio" class="btn-group" default="0" label="AIM_RANDSTART_LABEL" description="AIM_RANDSTART_DESCR">
+  					<option value="0">AIM_NO</option> 
+  					<option value="1">AIM_YES</option> 
+  				</field>
+				<field name="showNav" type="radio" class="btn-group" default="1" label="AIM_DIRECTIONNAV_LABEL" description="AIM_DIRECTIONNAV_DESCR">
+  					<option value="0">AIM_NO</option> 
+  					<option value="1">AIM_YES</option>
+  					<option value="onover">AIM_ONMOUSEOVER</option>
+  				</field>
+		  		<field name="opt_controlNav" type="radio" class="btn-group" default="1" label="AIM_CONTROLNAV_LABEL" description="AIM_CONTROLNAV_DESCR">
+		  			<option value="0">AIM_NO</option> 
+		  			<option value="1">AIM_YES</option> 
+		  		</field>
+		  		<field name="opt_keyboardNav" type="radio" class="btn-group" default="1" label="AIM_KEYBOARDNAV_LABEL" description="AIM_KEYBOARDNAV_DESCR">
+		  			<option value="0">AIM_NO</option> 
+		  			<option value="1">AIM_YES</option> 
+		  		</field>
+		  		<field name="opt_pauseOnHover" type="radio" class="btn-group" default="1" label="AIM_PAUSEONHOVER_LABEL" description="AIM_PAUSEONHOVER_DESCR">
+		  			<option value="0">AIM_NO</option> 
+		  			<option value="1">AIM_YES</option> 
+		  		</field>
+		  		<field name="opt_stopOnEnd" type="radio" class="btn-group" default="0" label="AIM_STOPONEND_LABEL" description="AIM_STOPONEND_DESCR">
+		  			<option value="1">AIM_NO</option> 
+		  			<option value="0">AIM_YES</option> 
+		  		</field>
+				<field name="sspHeader" type="ariheader" default="AIM_SLIDES_PARAMS" label="" description="" />
+                <field name="linkTarget" type="list" default="_self" label="AIM_LINKTARGET_LABEL" description="AIM_LINKTARGET_DESCR">
+                    <option value="_blank">AIM_TARGET_BLANK</option>
+                    <option value="_self">AIM_TARGET_SELF</option>
+                    <option value="_parent">AIM_TARGET_PARENT</option>
+                    <option value="_top">AIM_TARGET_TOP</option>
+                </field>
+                <field name="customLinkTarget" type="text" size="20" default="" label="AIM_CUSTOMLINKTARGET_LABEL" description="AIM_CUSTOMLINKTARGET_DESCR" />
+                <field name="i18n" type="radio" class="btn-group" default="0" label="AIM_I18N_LABEL" description="AIM_I18N_DESCR">
+					<option value="0">AIM_NO</option> 
+		  			<option value="1">AIM_YES</option> 
+		  		</field>
+				<field name="descrFile" type="text" size="30" default="ariimageslider.ini" label="AIM_DESCRFILE_LABEL" description="AIM_DESCRFILE_DESCR" />
+				<field name="defaultDescription" type="text" size="60" default="" label="AIM_DEFDESCR_LABEL" description="AIM_DEFDESCR_DESCR" />
+				<field name="defaultLink" type="text" size="60" default="" label="AIM_DEFLINK_LABEL" description="AIM_DEFLINK_DESCR" />
+				<field name="imglist_useThumbs" type="radio" class="btn-group" default="0" label="AIM_USETHUMBS_LABEL" description="AIM_USETHUMBS_DESCR">
+		  			<option value="0">AIM_NO</option> 
+		  			<option value="1">AIM_YES</option> 
+		  		</field>
+				<field name="imglist_thumbWidth" type="text" class="input-small" size="6" default="150" label="AIM_THUMBWIDTH_LABEL" description="AIM_THUMBWIDTH_DESCR" />
+		  		<field name="imglist_thumbHeight" type="text" class="input-small" size="6" default="" label="AIM_THUMBHEIGHT_LABEL" description="AIM_THUMBHEIGHT_DESCR" />
+		  		<field name="imglist_thumbPath" type="text" size="50" default="" label="AIM_THUMBPATH_LABEL" description="AIM_THUMBPATH_DESCR" />
+		  		<field name="opt_controlNavThumbs" type="radio" class="btn-group" default="0" label="AIM_NAVTHUMBS_LABEL" description="AIM_NAVTHUMBS_DESCR">
+  					<option value="0">AIM_NO</option> 
+		  			<option value="1">AIM_YES</option> 
+		  		</field>
+				<field name="imglist_navThumbWidth" type="text" class="input-small" size="6" default="75" label="AIM_NAVTHUMBWIDTH_LABEL" description="AIM_NAVTHUMBWIDTH_DESCR" />
+		  		<field name="imglist_navThumbHeight" type="text" class="input-small" size="6" default="" label="AIM_NAVTHUMBHEIGHT_LABEL" description="AIM_NAVTHUMBHEIGHT_DESCR" />
+		  		<field name="imglist_navThumbPath" type="text" size="50" default="" label="AIM_THUMBPATH_LABEL" description="AIM_THUMBPATH_DESCR" />
+  			</fieldset>
+
+            <fieldset name="advanced">
+                <field name="loadMethod" type="radio" class="btn-group" default="ready" label="AIM_LOADMETHOD_LABEL" description="AIM_LOADMETHOD_DESCR">
+                    <option value="ready">AIM_DOMREADY</option>
+                    <option value="load">AIM_ONLOAD</option>
+                </field>
+                <field name="moduleclass_sfx" type="text" default="" label="AIM_CLASSSUFFIX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+                <field name="customstyle" type="textarea" class="input-xlarge" filter="raw" rows="10" cols="50" label="AIM_STYLE_LABEL" description="AIM_STYLE_DESCR" />
+            </fieldset>
+        </fields>
+	</config>
+</extension>
